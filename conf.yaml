@@ -1,0 +1,53 @@
+proxies:
+- name: "\U0001F1ED\U0001F1F0 香港_hy"
+  type: hysteria
+  server: hk1109.az.yjbzl.cn
+  port: 9527
+  up-speed: 55
+  down-speed: 88
+  auth: cGFzc3dvcmRpc2F6aGsyMzNoYQ==
+  obfs-protocol: udp
+  udp: true
+  sni: hk1109.az.yjbzl.cn
+  alpn:
+  - h3
+  skip-cert-verify: true
+- name: "\U0001F1F0\U0001F1F7 韩国_hy"
+  type: hysteria
+  server: www.yuji2022.gq
+  port: 22345
+  auth: MTQ3MjU4MzY5
+  up-speed: 33
+  down-speed: 55
+  obfs-protocol: udp
+  udp: true
+  sni: www.yuji2022.ga
+  alpn:
+  - h3
+  skip-cert-verify: true
+- name: "\U0001F1EF\U0001F1F5 大阪_hy"
+  type: hysteria
+  server: blog.yuji2022.ml
+  port: 45674
+  auth: cGFzc3dvcmRpc3ZtaXNzZ29vZGlpag==
+  obfs-protocol: udp
+  udp: true
+  up-speed: 33
+  down-speed: 66
+  sni: blog.yuji2022.ml
+  alpn:
+  - h3
+  skip-cert-verify: true
+- name: "\U0001F1FA\U0001F1F8 美国_hy"
+  type: hysteria
+  server: www.yuji2022.cf
+  port: 22345
+  up-speed: 33
+  down-speed: 55
+  auth: cGFzc3dvcmRpc2NjeXlkczIzMzM=
+  obfs-protocol: udp
+  udp: true
+  sni: www.yuji2022.cf
+  alpn:
+  - h3
+  skip-cert-verify: true
