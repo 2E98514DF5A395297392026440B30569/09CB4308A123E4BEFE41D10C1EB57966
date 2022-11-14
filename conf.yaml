@@ -28,7 +28,7 @@ proxies:
   - h3
   skip-cert-verify: true
 #德国节点
-- name: "\U0001f1e9\U0001f1ea 德国_hy"
+- name: "\U0001F1E9\U0001F1EA 德国_hy"
   type: hysteria
   server: hy.fr1113.ol.yjbzl.cn
   port: 9527
