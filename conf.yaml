@@ -42,19 +42,19 @@ proxies:
   - h3
   skip-cert-verify: true
 #日本节点
-- name: "\U0001F1EF\U0001F1F5 大阪_hy"
-  type: hysteria
-  server: blog.yuji2022.ml
-  port: 45674
-  auth: cGFzc3dvcmRpc3ZtaXNzZ29vZGlpag==
-  obfs-protocol: udp
-  udp: true
-  up-speed: 33
-  down-speed: 66
-  sni: blog.yuji2022.ml
-  alpn:
-  - h3
-  skip-cert-verify: true
+#- name: "\U0001F1EF\U0001F1F5 大阪_hy"
+#  type: hysteria
+#  server: blog.yuji2022.ml
+#  port: 45674
+#  auth: cGFzc3dvcmRpc3ZtaXNzZ29vZGlpag==
+#  obfs-protocol: udp
+#  udp: true
+#  up-speed: 33
+#  down-speed: 66
+#  sni: blog.yuji2022.ml
+#  alpn:
+#  - h3
+#  skip-cert-verify: true
 #美国节点
 - name: "\U0001F1FA\U0001F1F8 美国_hy"
   type: hysteria
