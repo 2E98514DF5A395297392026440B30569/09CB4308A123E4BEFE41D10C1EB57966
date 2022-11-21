@@ -99,6 +99,14 @@ proxy-groups:
   use:
   - "vps"
   icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/DisneyPlus.png
+#spotify
+- name: Spotify
+  type: select
+  proxies:
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Spotify.png
 #国外抖音
 - name: Tiktok
   type: select
@@ -149,6 +157,10 @@ rule-providers:
     behavior: domain-text
     interval: 86400
     url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/NetEaseMusic_domain-text.yaml
+  Spotify_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Spotify_domain-text.yaml
   Microsoft_domain-text:
     behavior: domain-text
     interval: 86400
@@ -301,6 +313,7 @@ rules:
 - RULE-SET,Youtube_domain-text,Youtube
 - RULE-SET,DisneyPlus_domain-text,DisneyPlus
 - RULE-SET,Tiktok_domain-text,Tiktok
+- RULE-SET,Spotify_domain-text,Spotify
 - RULE-SET,Netflix_ipcidr-text,Netflix
 - RULE-SET,Netflix_domain-text,Netflix
 #代理
