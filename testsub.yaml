@@ -1,0 +1,312 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+dns:
+  enable: true
+  ipv6: true
+  default-nameserver:
+    - "223.5.5.5"
+  enhanced-mode: redir-host
+  nameserver:
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+    - "[2400:3200::1]:53"
+  fallback:
+    - "https://dns.google/dns-query"
+    - "tls://dns.google"
+    - "https://cloudflare-dns.com/dns-query"
+    - "[2001:4860:4860::8888]:53"
+  #添加需要直连的国内域名                                    
+  fake-ip-filter:
+    - baidu.com
+proxy-providers:
+  vps:
+    url: https://raw.githubusercontent.com/yujibuzailai2022/vps_stash_proxies/main/conf.yaml
+    interval: 86400
+proxy-groups:
+- name: "\U0001F530 Proxy"
+  type: select
+  proxies:
+  - "♻ Auto"
+  use:
+  - "vps"
+#自动选择
+- name: ♻ Auto
+  use:
+  - "vps"
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: "300"
+#网易云
+- name: NeteaseMusic
+  type: select
+  proxies:
+  - "\U0001F3AF Direct"
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/NetEase.png
+#哔哩哔哩
+- name: Bilibili
+  type: select
+  proxies:
+  - "\U0001F3AF Direct"
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/bilibili.png
+#微软
+- name: Microsoft
+  type: select
+  proxies:
+  - "\U0001F3AF Direct"
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Microsoft.png
+#苹果
+- name: Apple
+  type: select
+  proxies:
+  - "\U0001F3AF Direct"
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Apple.png
+#电报
+- name: Telegram
+  proxies:
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  type: select
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Telegram.png
+#油管
+- name: Youtube
+  proxies:
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  type: select
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Youtube.png
+#迪士尼
+- name: DisneyPlus
+  type: select
+  proxies:
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/DisneyPlus.png
+#国外抖音
+- name: Tiktok
+  type: select
+  proxies:
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Tiktok.png
+#奈飞
+- name: Netflix
+  type: select
+  proxies:
+  - "\U0001F530 Proxy"
+  use:
+  - "vps"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Netflix.png
+#广告拦截
+- name: "\U0001F6D1 Adblock"
+  proxies:
+  - REJECT
+  - DIRECT
+  - "\U0001F530 Proxy"
+  type: select
+#直接连接
+- name: "\U0001F3AF Direct"
+  proxies:
+  - DIRECT
+  - REJECT
+  - "\U0001F530 Proxy"
+  type: select
+#兜底
+- name: "\U0001F41F Final"
+  proxies:
+  - "\U0001F530 Proxy"
+  - "\U0001F3AF Direct"
+  - "\U0001F6D1 Adblock"
+  use:
+  - "vps"
+  type: select
+rule-providers:
+  applications:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt
+    path: ./ruleset/applications.yaml
+    interval: 86400
+  NetEaseMusic_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/NetEaseMusic_domain-text.yaml
+  Microsoft_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Microsoft_domain-text.yaml
+  NetEaseMusic_ipcidr-text:
+    behavior: ipcidr-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/NetEaseMusic_ipcidr-text.yaml
+  Youtube_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/YouTube_domain-text.yaml
+  Tiktok_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Tiktok_domain-text.yaml
+  Telegram_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Telegram_domain-text.yaml
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+  Telegram_ipcidr-text:
+    behavior: ipcidr-text
+    interval: 86400
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Telegram_ipcidr-text.yaml
+  Bilibili_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Bilibili_domain-text.yaml
+  BilibiliHMT_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/BilibiliHMT_domain-text.yaml
+  BilibiliHMT_ipcidr-text:
+    behavior: ipcidr-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/BilibiliHMT_ipcidr-text.yaml
+  Netflix_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Netflix_domain-text.yaml
+  Netflix_ipcidr-text:
+    behavior: ipcidr-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Netflix_ipcidr-text.yaml
+  Apple_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Apple_domain-text.yaml
+    path: ./ruleset/apple.yaml
+    interval: 86400
+  Icloud_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Icloud_domain-text.yaml
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+  Cn_ipcidr-text:
+    type: http
+    behavior: ipcidr-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Cn_ipcidr-text.yaml
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+  Direct_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Direct_domain-text.yaml
+    path: ./ruleset/direct.yaml
+    interval: 86400
+  Gfw_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Gfw_domain-text.yaml
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+  Google_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Google_domain-text.yaml
+    path: ./ruleset/google.yaml
+    interval: 86400
+  Greatfire_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Greatfire_domain-text.yaml
+    path: ./ruleset/greatfire.yaml
+    interval: 86400
+  Lan_ipcidr-text:
+    type: http
+    behavior: ipcidr-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Lan_ipcidr-text.yaml
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+  Private_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Private_domain-text.yaml
+    path: ./ruleset/private.yaml
+    interval: 86400
+  Proxy_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Proxy_domain-text.yaml
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  Reject_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Reject_domain-text.yaml
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  Tld-not-cn_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Tld-not-cn_domain-text.yaml
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+  DisneyPlus_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://github.com/yuji01/clash/raw/main/rule-set/DisneyPlus_domain-text.yaml
+rules:
+#广告拦截
+- "RULE-SET,Reject_domain-text,\U0001F6D1 Adblock"
+#直连
+- "IP-CIDR,172.168.100.1/24,\U0001F3AF Direct"
+- "DOMAIN,clash.razord.top,\U0001F3AF Direct"
+- "DOMAIN,yacd.haishan.me,\U0001F3AF Direct"
+- "GEOIP,LAN,\U0001F3AF Direct"
+- "GEOIP,CN,\U0001F3AF Direct"
+- "RULE-SET,Lan_ipcidr-text,\U0001F3AF Direct"
+- "RULE-SET,Cn_ipcidr-text,\U0001F3AF Direct"
+- "RULE-SET,applications,\U0001F3AF Direct"
+- "RULE-SET,Private_domain-text,\U0001F3AF Direct"
+- "RULE-SET,Direct_domain-text,\U0001F3AF Direct"
+#国内应用
+- RULE-SET,NetEaseMusic_ipcidr-text,NeteaseMusic
+- RULE-SET,NetEaseMusic_domain-text,NeteaseMusic
+- RULE-SET,BilibiliHMT_ipcidr-text,Bilibili
+- RULE-SET,BilibiliHMT_domain-text,Bilibili
+- RULE-SET,Bilibili_domain-text,Bilibili
+#国际应用
+- RULE-SET,Microsoft_domain-text,Microsoft
+- RULE-SET,Icloud_domain-text,Apple
+- RULE-SET,Apple_domain-text,Apple
+#国外应用
+- RULE-SET,Telegram_ipcidr-text,Telegram
+- RULE-SET,Telegram_domain-text,Telegram
+- RULE-SET,Youtube_domain-text,Youtube
+- RULE-SET,DisneyPlus_domain-text,DisneyPlus
+- RULE-SET,Tiktok_domain-text,Tiktok
+- RULE-SET,Netflix_ipcidr-text,Netflix
+- RULE-SET,Netflix_domain-text,Netflix
+#代理
+- "RULE-SET,Google_domain-text,\U0001F530 Proxy"
+- "RULE-SET,Proxy_domain-text,\U0001F530 Proxy"
+- "RULE-SET,Tld-not-cn_domain-text,\U0001F530 Proxy"
+- "RULE-SET,Greatfire_domain-text,\U0001F530 Proxy"
+- "RULE-SET,Gfw_domain-text,\U0001F530 Proxy"
+- "MATCH,\U0001F41F Final"
