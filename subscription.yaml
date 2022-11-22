@@ -1,3 +1,4 @@
+###  stash订阅文件  ###
 mixed-port: 7890
 allow-lan: true
 mode: rule
@@ -23,7 +24,7 @@ dns:
     - baidu.com
 proxy-providers:
   vps:
-    url: https://raw.githubusercontent.com/yujibuzailai2022/vps_stash_proxies/main/conf.yaml
+    url: https://raw.githubusercontent.com/2E98514DF5A395297392026440B30569/09CB4308A123E4BEFE41D10C1EB57966/main/conf.yaml
     interval: 86400
 proxy-groups:
 - name: "\U0001F530 Proxy"
