@@ -45,14 +45,14 @@ proxies:
 #美国节点
 - name: "\U0001F1FA\U0001F1F8 美国_hy"
   type: hysteria
-  server: www.yuji2022.cf
-  port: 22345
+  server: la1127.cc.yjbzl.cn
+  port: 9527
   up-speed: 33
-  down-speed: 55
+  down-speed: 88
   auth: cGFzc3dvcmRpc2NjeXlkczIzMzM=
   obfs-protocol: udp
   udp: true
-  sni: www.yuji2022.cf
+  sni: la1127.cc.yjbzl.cn
   alpn:
   - h3
   skip-cert-verify: true
