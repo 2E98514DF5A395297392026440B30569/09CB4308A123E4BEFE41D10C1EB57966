@@ -17,14 +17,14 @@ proxies:
 #日本节点
 - name: "\U0001F1EF\U0001F1F5 日本"
   type: hysteria
-  server: cd.jp1122.ln.yjbzl.cn
+  server: jp1127.ln.yjbzl.cn
   port: 9527
   auth: QnE3RDhwUWdlZGo3MmhnUw==
   obfs-protocol: udp
   udp: true
-  up-speed: 11
-  down-speed: 55
-  sni: cd.jp1122.ln.yjbzl.cn
+  up-speed: 33
+  down-speed: 88
+  sni: jp1127.ln.yjbzl.cn
   alpn:
   - h3
   skip-cert-verify: true
