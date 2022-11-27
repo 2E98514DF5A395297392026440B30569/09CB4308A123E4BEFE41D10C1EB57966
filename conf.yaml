@@ -1,16 +1,16 @@
 ### stash自建节点配置  ###
 proxies:
 #香港节点
-- name: "\U0001F1ED\U0001F1F0 香港_hy"
+- name: "\U0001F1ED\U0001F1F0 香港"
   type: hysteria
-  server: hk1109.az.yjbzl.cn
+  server: hk1127.az.yjbzl.cn
   port: 9527
-  up-speed: 55
-  down-speed: 88
+  up-speed: 33
+  down-speed: 110
   auth: cGFzc3dvcmRpc2F6aGsyMzNoYQ==
   obfs-protocol: udp
   udp: true
-  sni: hk1109.az.yjbzl.cn
+  sni: hk1127.az.yjbzl.cn
   alpn:
   - h3
   skip-cert-verify: true
