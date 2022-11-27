@@ -15,7 +15,7 @@ proxies:
   - h3
   skip-cert-verify: true
 #日本节点
-- name: "\U0001F1EF\U0001F1F5 日本_hy"
+- name: "\U0001F1EF\U0001F1F5 日本"
   type: hysteria
   server: cd.jp1122.ln.yjbzl.cn
   port: 9527
@@ -29,7 +29,7 @@ proxies:
   - h3
   skip-cert-verify: true
 #德国节点
-- name: "\U0001F1E9\U0001F1EA 德国_hy"
+- name: "\U0001F1E9\U0001F1EA 德国"
   type: hysteria
   server: hy.fr1113.ol.yjbzl.cn
   port: 9527
@@ -43,7 +43,7 @@ proxies:
   - h3
   skip-cert-verify: true
 #美国节点
-- name: "\U0001F1FA\U0001F1F8 美国_hy"
+- name: "\U0001F1FA\U0001F1F8 美国"
   type: hysteria
   server: la1127.cc.yjbzl.cn
   port: 9527
