@@ -14,20 +14,6 @@ proxies:
   alpn:
   - h3
   skip-cert-verify: true
-#韩国节点
-- name: "\U0001F1F0\U0001F1F7 韩国_hy"
-  type: hysteria
-  server: www.yuji2022.gq
-  port: 22345
-  auth: MTQ3MjU4MzY5
-  up-speed: 33
-  down-speed: 55
-  obfs-protocol: udp
-  udp: true
-  sni: www.yuji2022.ga
-  alpn:
-  - h3
-  skip-cert-verify: true
 #日本节点
 - name: "\U0001F1EF\U0001F1F5 日本_hy"
   type: hysteria
