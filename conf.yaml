@@ -79,7 +79,7 @@ proxies:
     headers:
       Host: ol.cdn.yj2022.cf
 #美国节点
-- name: "\U0001F1FA\U0001F1F8 美国"
+- name: "\U0001F1FA\U0001F1F8 洛杉矶"
   type: hysteria
   server: la1127.cc.yjbzl.cn
   port: 9527
@@ -92,7 +92,7 @@ proxies:
   alpn:
   - h3
   skip-cert-verify: true 
-- name: "\U0001F1FA\U0001F1F8 美国cdn"
+- name: "\U0001F1FA\U0001F1F8 洛杉矶cdn"
   type: vmess
   server: 13.225.102.6
   port: "80"
