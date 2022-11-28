@@ -14,6 +14,18 @@ proxies:
   alpn:
   - h3
   skip-cert-verify: true
+- name: "\U0001F1ED\U0001F1F0 香港cdn"
+  type: vmess
+  server: 13.225.102.6
+  port: "80"
+  uuid: a6a9c987-0292-451b-82ee-fff2a2b00f1d
+  alterId: "0"
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /a6a9c987-0292-451b-82ee-fff2a2b00f1d
+    headers:
+      Host: hk.cdn.yjbzl.cn
 #日本节点
 - name: "\U0001F1EF\U0001F1F5 日本"
   type: hysteria
@@ -28,6 +40,18 @@ proxies:
   alpn:
   - h3
   skip-cert-verify: true
+- name: "\U0001F1EF\U0001F1F5 日本cdn"
+  type: vmess
+  server: 13.225.102.6
+  port: "80"
+  uuid: 21314dac-d346-43a4-9002-ab39fa18e36a
+  alterId: "0"
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /21314dac-d346-43a4-9002-ab39fa18e36a
+    headers:
+      Host: cdn.yuji2022.cf
 #德国节点
 - name: "\U0001F1E9\U0001F1EA 德国"
   type: hysteria
@@ -42,6 +66,18 @@ proxies:
   alpn:
   - h3
   skip-cert-verify: true
+- name: "\U0001F1E9\U0001F1EA 德国cdn"
+  type: vmess
+  server: 13.225.102.6
+  port: "80"
+  uuid: 331a5f51-9863-44eb-ce72-e2616cca9ba0
+  alterId: "0"
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /xOwC49TUIazwkOFi5o0cUnNNWTcHMngTMaDnyrNrGdCARhPaoo9oUsfQn3jumxvqvm3t3WGcYbVSG1tch0YsJsAerk5Lxu3t
+    headers:
+      Host: ol.cdn.yj2022.cf
 #美国节点
 - name: "\U0001F1FA\U0001F1F8 美国"
   type: hysteria
@@ -55,4 +91,28 @@ proxies:
   sni: la1127.cc.yjbzl.cn
   alpn:
   - h3
-  skip-cert-verify: true
+  skip-cert-verify: true 
+- name: "\U0001F1FA\U0001F1F8 美国cdn"
+  type: vmess
+  server: 13.225.102.6
+  port: "80"
+  uuid: 134bf972-0520-42b3-da4d-24333dff0dc3
+  alterId: "0"
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /134bf972-0520-42b3-da4d-24333dff0dc3
+    headers:
+      Host: cc.cdn.yjbzl.cn 
+- name: "\U0001F1FA\U0001F1F8 纽约cdn"
+  type: vmess
+  server: 13.225.102.6
+  port: "80"
+  uuid: c45231f5-5872-4946-93e7-927d90a70b57
+  alterId: "0"
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /UZpFfslsyx6pv0DeCU2PP-1_l3WxdP8vLucTGdbrZ_IfxaYALBf5fYWYXleENta9lXxuVxATrNF1OU45FVGqLsfLWqRrOvQCVH9hWEL9l8FDQGv71QA1GC1Ct91GYYP9neJGRjhoe_ubM9lgdP77
+    headers:
+      Host: cdn.yj2022.cf
