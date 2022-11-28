@@ -38,7 +38,7 @@ proxy-groups:
   use:
   - "vps"
   type: url-test
-  url: https://www.gstatic.com/generate_204
+  url: http://www.gstatic.com/generate_204
   interval: "300"
 #网易云
 - name: NeteaseMusic
